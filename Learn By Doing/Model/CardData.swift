@@ -19,11 +19,11 @@ let cardData : [Card] = [
       message: "Introducing a modern way to design user interfaces for any Apple devices.",
       gradientColors: [Color("Color01"), Color("Color02")]),
     Card(
-      title: "iOS 14",
+      title: "iOS 17",
       headline: "Dramatic new look.",
       imageName: "developer-no2",
       callToAction: "Discover",
-      message: "Get ready for iOS 14 and learn about the new Dark Mode.",
+      message: "Get ready for iOS 17 and learn about the new Dark Mode.",
       gradientColors: [Color("Color03"), Color("Color04")]
     ),
     Card(
@@ -51,7 +51,7 @@ let cardData : [Card] = [
       gradientColors: [Color("Color09"), Color("Color10")]
     ),
     Card(
-      title: "Xcode 12",
+      title: "Xcode 15",
       headline: "The best tool you need to build apps.",
       imageName: "developer-no6",
       callToAction: "Develop",

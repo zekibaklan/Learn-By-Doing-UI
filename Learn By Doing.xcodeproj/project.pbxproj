@@ -15,6 +15,8 @@
 		5BEB36282AB30E0300BDC097 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB36272AB30E0300BDC097 /* CardView.swift */; };
 		5BEB362B2AB31C1500BDC097 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB362A2AB31C1500BDC097 /* CardModel.swift */; };
 		5BEB362E2AB31CDD00BDC097 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB362D2AB31CDD00BDC097 /* CardData.swift */; };
+		5BEB36302AB3210000BDC097 /* sound-chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB362F2AB3210000BDC097 /* sound-chime.mp3 */; };
+		5BEB36322AB3211C00BDC097 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB36312AB3211C00BDC097 /* PlaySound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		5BEB36272AB30E0300BDC097 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5BEB362A2AB31C1500BDC097 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		5BEB362D2AB31CDD00BDC097 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		5BEB362F2AB3210000BDC097 /* sound-chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-chime.mp3"; sourceTree = "<group>"; };
+		5BEB36312AB3211C00BDC097 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		5BEB36162AB307B800BDC097 /* Learn By Doing */ = {
 			isa = PBXGroup;
 			children = (
+				5BEB362F2AB3210000BDC097 /* sound-chime.mp3 */,
 				5BEB36252AB30A4E00BDC097 /* Launch Screen.storyboard */,
 				5BEB36172AB307B800BDC097 /* Learn_By_DoingApp.swift */,
 				5BEB362C2AB31C1900BDC097 /* Model */,
@@ -91,6 +96,7 @@
 			children = (
 				5BEB362A2AB31C1500BDC097 /* CardModel.swift */,
 				5BEB362D2AB31CDD00BDC097 /* CardData.swift */,
+				5BEB36312AB3211C00BDC097 /* PlaySound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BEB36262AB30A4E00BDC097 /* Launch Screen.storyboard in Resources */,
+				5BEB36302AB3210000BDC097 /* sound-chime.mp3 in Resources */,
 				5BEB361F2AB307B900BDC097 /* Preview Assets.xcassets in Resources */,
 				5BEB361C2AB307B900BDC097 /* Assets.xcassets in Resources */,
 			);
@@ -167,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BEB362E2AB31CDD00BDC097 /* CardData.swift in Sources */,
+				5BEB36322AB3211C00BDC097 /* PlaySound.swift in Sources */,
 				5BEB361A2AB307B800BDC097 /* ContentView.swift in Sources */,
 				5BEB362B2AB31C1500BDC097 /* CardModel.swift in Sources */,
 				5BEB36282AB30E0300BDC097 /* CardView.swift in Sources */,

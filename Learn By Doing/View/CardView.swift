@@ -10,34 +10,47 @@ import SwiftUI
 struct CardView: View {
     //    MARK: - PROPERTIES
     
-    var gradient : [Color] = [Color("Color01"),Color("Color02")]
+    var card : Card
+    @State private var fadeIn : Bool = false
+    @State private var moveDownward : Bool = false
+    @State private var moveUpward : Bool = false
+    @State private var showAlert : Bool = false
+    
+    var hapticFeedBack = UIImpactFeedbackGenerator(style: .heavy)
+    
+    
     
     //    MARK: - CARD
     
     var body: some View {
         ZStack {
-            Image("developer-no1")
+            Image(card.imageName)
+                .opacity(fadeIn ? 1.0 : 0.0)
             VStack {
                 
-                Text("SwiftUI")
+                Text(card.title)
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
                    
                 
-                Text("Better apps. Less code.")
+                Text(card.headline)
                     .fontWeight(.light)
                     .foregroundColor(.white)
                     .italic()
             }
-            .offset(y: -218)
+            .offset(y: moveDownward ? -218 : -300)
             
             Button {
+                playSound(sound: "sound-chime", type: "mp3")
+                self.showAlert.toggle()
+                
+                self.hapticFeedBack.impactOccurred()
                 print("button was tapped")
             } label: {
                 HStack {
-                    Text("Learn".uppercased())
+                    Text(card.callToAction.uppercased())
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
                     .accentColor(.white)
@@ -48,25 +61,43 @@ struct CardView: View {
                 }
                 .padding(.vertical)
                 .padding(.horizontal,24)
-                .background(LinearGradient(gradient: Gradient(colors: gradient), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: card.gradientColors), startPoint: .leading, endPoint: .trailing))
                 .clipShape(Capsule())
                 .shadow(color: Color("ColorShadow"), radius: 6, x: 0, y: 3)
             }
-            .offset(y: 210)
+            .offset(y: moveUpward ? 210 : 300)
 
         }
         
         
             .frame(width: 335,height: 545)
-            .background(LinearGradient(gradient: Gradient(colors: gradient), startPoint: .top, endPoint: .bottom))
+            .background(LinearGradient(gradient: Gradient(colors: card.gradientColors), startPoint: .top, endPoint: .bottom))
             .cornerRadius(16)
             .shadow(radius: 8)
+            .onAppear() {
+                withAnimation(.linear(duration: 1.2)) {
+                    self.fadeIn.toggle()
+                }
+                withAnimation(.linear(duration: 0.8)) {
+                    self.moveDownward.toggle()
+                    self.moveUpward.toggle()
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text(card.title),
+                    message: Text(card.message),
+                    dismissButton: .default(Text("OK"))
+                
+                )
+            }
+        
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(card: cardData[1])
             .previewLayout(.sizeThatFits)
     }
 }
